@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Java / Maven
+target/
+HELP.md
+
+# Node.js
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.*
+
+# Spring Boot local secrets - DO NOT COMMIT
+application-local.properties
+
+# Logs
+*.log
