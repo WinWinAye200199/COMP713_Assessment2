@@ -1,6 +1,7 @@
 package com.comp713.grocery_ordering_api.service;
 
 import com.comp713.grocery_ordering_api.entity.Customer;
+import com.comp713.grocery_ordering_api.exception.ResourceNotFoundException;
 import com.comp713.grocery_ordering_api.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,6 @@ public class CustomerService {
 
     public Customer getCustomerById(Long id) {
         return customerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Customer not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id: " + id));
     }
 }

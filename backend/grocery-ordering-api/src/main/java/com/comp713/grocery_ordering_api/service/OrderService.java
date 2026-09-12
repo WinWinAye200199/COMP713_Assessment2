@@ -4,6 +4,7 @@ import com.comp713.grocery_ordering_api.dto.OrderRequest;
 import com.comp713.grocery_ordering_api.entity.Customer;
 import com.comp713.grocery_ordering_api.entity.Order;
 import com.comp713.grocery_ordering_api.entity.Product;
+import com.comp713.grocery_ordering_api.exception.ResourceNotFoundException;
 import com.comp713.grocery_ordering_api.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,6 @@ public class OrderService {
 
     public Order getOrderById(Long id) {
         return orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found with id: " + id));
     }
 }
